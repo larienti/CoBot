@@ -1,0 +1,27 @@
+{"errors": [{"id": "authentication_error", "message": "invalid api key"}]}
+
+
+
+C:/Python38/python.exe c:/Coding/CoBot/cobot005.py
+Traceback (most recent call last):
+  File "c:/Coding/CoBot/cobot005.py", line 35, in <module>
+    r = requests.get(api_url + 'user', auth=auth)
+  File "C:\Python38\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Python38\lib\site-packages\requests\api.py", line 59, in request      
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Python38\lib\site-packages\requests\sessions.py", line 573, in request
+    prep = self.prepare_request(req)
+  File "C:\Python38\lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+  File "C:\Python38\lib\site-packages\requests\models.py", line 372, in prepare
+    self.prepare_auth(auth, url)
+  File "C:\Python38\lib\site-packages\requests\models.py", line 603, in prepare_auth     
+    r = auth(self)
+  File "c:/Coding/CoBot/cobot005.py", line 22, in __call__
+    signature = hmac.new((self.secret_key, 'latin-1'), message.encode('utf-8'), hashlib.sha256).hexdigest()
+  File "C:\Python38\lib\hmac.py", line 153, in new
+    return HMAC(key, msg, digestmod)
+  File "C:\Python38\lib\hmac.py", line 48, in __init__
+    raise TypeError("key: expected bytes or bytearray, but got %r" % type(key).__name__)
+TypeError: key: expected bytes or bytearray, but got 'tuple'
